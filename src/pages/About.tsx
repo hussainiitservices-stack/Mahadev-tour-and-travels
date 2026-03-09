@@ -2,10 +2,10 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Car, Users, MapPin, Award, Target, Eye, Heart } from "lucide-react";
 
 const stats = [
-  { icon: Car, value: "50+", label: "Vehicles" },
-  { icon: Users, value: "10,000+", label: "Happy Customers" },
-  { icon: MapPin, value: "100+", label: "Routes Covered" },
-  { icon: Award, value: "8+", label: "Years Experience" },
+  { icon: Car, value: "20+", label: "Vehicles" },
+  { icon: Users, value: "1000+", label: "Happy Customers" },
+  { icon: MapPin, value: "50+", label: "Routes Covered" },
+  { icon: Award, value: "12+", label: "Years Experience" },
 ];
 
 const About = () => (
@@ -16,10 +16,10 @@ const About = () => (
         <ScrollReveal>
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">About Us</span>
           <h1 className="mt-3 text-4xl font-bold font-display text-primary-foreground md:text-5xl">
-            Driving Excellence <span className="text-gradient-orange">Since 2017</span>
+            Driving Excellence <span className="text-gradient-orange">Since 2014</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Royal Wheels Travels started with a simple vision — to provide safe, comfortable, and affordable travel solutions across Madhya Pradesh and beyond.
+            Mahadev Tours & Travels started with a simple vision — to provide safe, comfortable, and affordable travel solutions across Madhya Pradesh and beyond.
           </p>
         </ScrollReveal>
       </div>
@@ -79,10 +79,10 @@ const About = () => (
               A Journey of <span className="text-gradient-orange">Trust & Excellence</span>
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              What started as a small car rental service in Indore has grown into one of the most trusted travel companies in Madhya Pradesh. With a fleet of over 50 well-maintained vehicles and a team of experienced drivers, we've served more than 10,000 happy customers.
+              What started as a small car rental service in Indore has grown into one of the most trusted travel companies in Madhya Pradesh. With a fleet of over 20 well-maintained vehicles and a team of experienced drivers, we've served more than 1000 happy customers.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Our commitment to safety, punctuality, and customer satisfaction has earned us a reputation as the go-to travel partner for families, corporates, and tourists. Whether it's a local city tour, an airport transfer, or an intercity journey, Royal Wheels delivers a premium experience every time.
+              Our commitment to safety, punctuality, and customer satisfaction has earned us a reputation as the go-to travel partner for families, corporates, and tourists. Whether it's a local city tour, an airport transfer, or an intercity journey, Mahadev Tours & Travels delivers a premium experience every time.
             </p>
           </ScrollReveal>
         </div>

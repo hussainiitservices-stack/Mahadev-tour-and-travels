@@ -1,14 +1,18 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
 import { Users, Route } from "lucide-react";
-import heroSedan from "@/assets/hero-sedan.jpg";
-import heroSuv from "@/assets/hero-suv.jpg";
-import heroInnova from "@/assets/hero-innova.jpg";
+import heroSedan from "@/assets/hero-sedan.png";
+// import heroSuv from "@/assets/hero-suv.png";
+import heroErtiga from "@/assets/hero-ertiga.png";
+import heroInnova from "@/assets/hero-innova.png";
+import heroTavera from "@/assets/hero-tavera.png";
 import heroTraveller from "@/assets/hero-traveller.jpg";
 
 const vehicles = [
   { img: heroSedan, name: "Sedan", seats: "4", price: "₹12/km", desc: "Perfect for airport transfers and business travel" },
-  { img: heroSuv, name: "SUV", seats: "6", price: "₹16/km", desc: "Ideal for family trips and outstation journeys" },
+  // { img: heroSuv, name: "SUV", seats: "6", price: "₹16/km", desc: "Ideal for family trips and outstation journeys" },
+  { img: heroErtiga, name: "Ertiga", seats: "7", price: "₹18/km", desc: "Spacious and comfortable for family trips" },
+  { img: heroTavera, name: "Tavera", seats: "12-16", price: "₹20/km", desc: "Ideal for large groups and corporate travel" },
   { img: heroInnova, name: "Innova Crysta", seats: "7", price: "₹18/km", desc: "Most popular choice for comfortable group travel" },
   { img: heroTraveller, name: "Tempo Traveller", seats: "12-16", price: "₹22/km", desc: "Best for large groups and pilgrim tours" },
   { img: heroSedan, name: "Luxury Car", seats: "4", price: "₹25/km", desc: "Premium vehicles for special occasions" },

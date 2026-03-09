@@ -3,6 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+/* ✅ ADDED: Import real logo from assets folder */
+import Logo from "../assets/LOGO.png";
+
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -26,16 +29,34 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-elevated py-3" : "bg-transparent py-5"
+        scrolled
+          ? "bg-background/95 backdrop-blur-md shadow-elevated py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-3">
+          
+          {/* ❌ REMOVED OLD TEXT LOGO */}
+          {/*
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-orange">
-            <span className="text-lg font-bold text-primary-foreground">RW</span>
+            <span className="text-lg font-bold text-primary-foreground">MTT</span>
           </div>
-          <span className={`text-xl font-bold font-display ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            Royal Wheels
+          */}
+
+          {/* ✅ ADDED REAL RECTANGULAR LOGO */}
+          <img
+            src={Logo}
+            alt="Mahadev Tours & Travels Logo"
+            className="h-16 w-auto object-contain"
+          />
+
+          <span
+            className={`text-xl font-bold font-display ${
+              scrolled ? "text-foreground" : "text-primary-foreground"
+            }`}
+          >
+            Mahadev Tours & Travels
           </span>
         </Link>
 
@@ -69,7 +90,11 @@ const Navbar = () => {
           {open ? (
             <X className="h-6 w-6 text-foreground" />
           ) : (
-            <Menu className={`h-6 w-6 ${scrolled ? "text-foreground" : "text-primary-foreground"}`} />
+            <Menu
+              className={`h-6 w-6 ${
+                scrolled ? "text-foreground" : "text-primary-foreground"
+              }`}
+            />
           )}
         </button>
       </div>
@@ -88,7 +113,9 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 className={`text-2xl font-display font-bold ${
-                  location.pathname === link.to ? "text-primary" : "text-foreground"
+                  location.pathname === link.to
+                    ? "text-primary"
+                    : "text-foreground"
                 }`}
               >
                 {link.label}

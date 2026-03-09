@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroSuv from "@/assets/hero-suv.jpg";
-import heroSedan from "@/assets/hero-sedan.jpg";
-import heroInnova from "@/assets/hero-innova.jpg";
+import heroSedan from "@/assets/hero-sedan.png";
+import heroInnova from "@/assets/hero-innova.png";
 import heroTraveller from "@/assets/hero-traveller.jpg";
+import heroErtiga from "@/assets/hero-ertiga.png";
+import heroTavera from "@/assets/hero-tavera.png";
 
 const slides = [
-  { img: heroSuv, label: "Premium SUV" },
-  { img: heroSedan, label: "Luxury Sedan" },
-  { img: heroInnova, label: "Innova Crysta" },
-  { img: heroTraveller, label: "Tempo Traveller" },
+  { img: heroSedan, label: "Luxury Sedans" },
+  { img: heroInnova, label: "Premium SUV's Like " },
+  { img: heroErtiga, label: "Ertiga" },
+  { img: heroTavera, label: "Tavera" },
+  { img: heroTraveller, label: "Tempo Travellers" },
+  
 ];
 
 const HeroSlider = () => {
@@ -49,14 +53,14 @@ const HeroSlider = () => {
             className="max-w-2xl"
           >
             <span className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-1.5 text-sm font-semibold text-primary backdrop-blur-sm">
-              🚗 {slides[current].label}
+               {slides[current].label}
             </span>
             <h1 className="mb-6 text-4xl font-bold leading-tight text-primary-foreground md:text-6xl lg:text-7xl font-display">
               Your Trusted
               <span className="text-gradient-orange block">Travel Partner</span>
             </h1>
             <p className="mb-8 max-w-lg text-lg text-primary-foreground/80">
-              Experience premium travel with Royal Wheels. Comfortable rides, professional drivers, and unforgettable journeys across India.
+              Experience premium travel with Mahadev Tours &. Comfortable rides, professional drivers, and unforgettable journeys across India.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

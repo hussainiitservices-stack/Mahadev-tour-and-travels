@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,9 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
+          
         <BrowserRouter>
+        <ScrollToTop />
           <AnimatePresence>{loading && <LoadingScreen />}</AnimatePresence>
           <CustomCursor />
           <Navbar />

@@ -9,7 +9,7 @@ const LoadingScreen = () => (
   >
     <div className="flex flex-col items-center gap-4">
       <div className="loading-spinner" />
-      <span className="text-sm font-semibold tracking-widest uppercase text-primary">Royal Wheels</span>
+      <span className="text-sm font-semibold tracking-widest uppercase text-primary">Mahadev Tours & Travels</span>
     </div>
   </motion.div>
 );

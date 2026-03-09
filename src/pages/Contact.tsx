@@ -38,7 +38,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {[
                     { name: "name", label: "Your Name", type: "text", placeholder: "John Doe" },
-                    { name: "phone", label: "Phone Number", type: "tel", placeholder: "+91 98765 43210" },
+                    { name: "phone", label: "Phone Number", type: "tel", placeholder: "+91 70246 01594" },
                     { name: "email", label: "Email Address", type: "email", placeholder: "john@example.com" },
                   ].map((f) => (
                     <div key={f.name}>
@@ -81,9 +81,9 @@ const Contact = () => {
                   <h2 className="mb-6 text-2xl font-bold font-display text-foreground">Contact Info</h2>
                   <div className="space-y-5">
                     {[
-                      { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
-                      { icon: Mail, label: "Email", value: "info@royalwheels.com", href: "mailto:info@royalwheels.com" },
-                      { icon: MapPin, label: "Address", value: "123, MG Road, Indore, Madhya Pradesh, India" },
+                      { icon: Phone, label: "Phone", value: "+91 70246 01594", href: "tel:+917024601594" },
+                      { icon: Mail, label: "Email", value: "info@84mahadevtravels.com", href: "mailto:info@84mahadevtravels.com" },
+                      // { icon: MapPin, label: "Address", value: "123, MG Road, Indore, Madhya Pradesh, India" },
                     ].map((c, i) => (
                       <div key={i} className="flex items-start gap-4">
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent">
@@ -103,7 +103,7 @@ const Contact = () => {
                 </div>
 
                 {/* Map */}
-                <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
+                {/* <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235014.29918008408!2d75.69800064999999!3d22.7241228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1709900000000!5m2!1sen!2sin"
                     width="100%"
@@ -111,9 +111,9 @@ const Contact = () => {
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
-                    title="Royal Wheels Location"
+                    title="Mahadev Tours & Location"
                   />
-                </div>
+                </div> */}
               </div>
             </ScrollReveal>
           </div>
