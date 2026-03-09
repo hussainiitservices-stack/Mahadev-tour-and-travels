@@ -16,6 +16,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
+import { HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => {
   }, []);
 
   return (
+    
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
@@ -39,6 +41,7 @@ const App = () => {
           <CustomCursor />
           <Navbar />
           <main>
+            <HelmetProvider>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
@@ -46,6 +49,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </HelmetProvider>
           </main>
           <Footer />
           <WhatsAppButton />

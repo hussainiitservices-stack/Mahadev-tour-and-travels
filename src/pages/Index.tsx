@@ -95,27 +95,27 @@ const reviews = [
 const routes = [
   {
     name: "Indore to Bhopal",
-    img: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Taj-ul-Masajid_Bhopal.jpg",
+    img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
     name: "Bhopal to Ujjain",
-    img: "https://upload.wikimedia.org/wikipedia/commons/3/33/Mahakaleshwar_Temple_Ujjain.jpg",
+    img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
     name: "Indore to Omkareshwar",
-    img: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Omkareshwar_Temple_Narmada.jpg",
+    img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
     name: "Bhopal to Indore",
-    img: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Rajwada_Palace_Indore.jpg",
+    img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
     name: "Indore to Airport",
-    img: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Airplane_runway_takeoff.jpg",
+    img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
     name: "Local City Tours",
-    img: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Indore_cityscape.jpg",
+    img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
 ];
 
@@ -193,15 +193,15 @@ const Index = () => {
 
                 <div className="mt-3 flex flex-col gap-3">
 
-  <span className="text-lg font-bold text-primary">
+  {/* <span className="text-lg font-bold text-primary">
     {car.price}
-  </span>
+  </span> */}
 
   {/* NORMAL CARS */}
   {!car.seatOptions && (
     <a
       href={`https://wa.me/917024601594?text=${encodeURIComponent(
-        `Hello, I want to book the ${car.name} from Mahadev Tours & Travels. Please share details.`
+        `Hello, Hello, Mahadev Tours & Travels I want to book the ${car.name}.Please share details.`
       )}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -296,11 +296,12 @@ const Index = () => {
 {/* PARALLAX: route cards stagger slightly by index */}
 <ParallaxItem speed={0.04 + (i % 3) * 0.015}>
   <div
-    className="group relative flex items-center gap-4 rounded-xl border border-border p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-card overflow-hidden bg-cover bg-center"
+    className="group relative flex items-center gap-4 rounded-xl border border-border p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-card overflow-hidden bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: `url(${route.img})` }}
   >
-    {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black/50"></div>
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/20"></div>
 
     <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent transition-colors group-hover:bg-gradient-orange">
       <Route className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
@@ -310,10 +311,10 @@ const Index = () => {
       <h3 className="font-semibold text-white">{route.name}</h3>
       <p className="text-xs text-white/80">Comfortable rides available</p>
     </div>
-
+<div className="absolute bottom-1 left-0 w-full border-t border-dashed border-orange-300/40"></div>
     {/* Animated Car */}
     <motion.div
-      className="absolute bottom-2"
+      className="absolute bottom-0"
       initial={{ left: "-30px" }}
       animate={{ left: "100%" }}
       transition={{
@@ -324,6 +325,7 @@ const Index = () => {
     >
       <Car className="h-5 w-5 text-orange-400 opacity-90" />
     </motion.div>
+
   </div>
 </ParallaxItem>
               </ScrollReveal>
@@ -335,10 +337,10 @@ const Index = () => {
       <div className="section-separator" />
 
       {/* Reviews */}
-      <section className="py-20 bg-muted">
+<section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="text3-center mb-14">
+            <div className="text-center mb-14">
               <span className="text-sm font-semibold uppercase tracking-widest text-primary">Testimonials</span>
               <h2 className="mt-2 text-3xl font-bold font-display md:text-4xl text-foreground">
                 What Our Customers <span className="text-gradient-orange">Say</span>
