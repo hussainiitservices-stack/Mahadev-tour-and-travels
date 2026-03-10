@@ -58,23 +58,23 @@ const vehicles = [
 /* ROUTES */
 const routes = [
   {
-    name: "Indore to Bhopal",
+    name: "All over India",
     img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
-    name: "Bhopal to Ujjain",
+    name: "Ujjain to Bhopal",
     img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
-    name: "Indore to Omkareshwar",
+    name: "Ujjain to Omkareshwar",
     img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
-    name: "Bhopal to Indore",
+    name: "Ujjain to Indore",
     img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
-    name: "Indore to Airport",
+    name: "Ujjain to Airport",
     img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
   {
@@ -82,6 +82,7 @@ const routes = [
     img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg",
   },
 ];
+
 
 const Services = () => {
   return (
