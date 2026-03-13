@@ -11,6 +11,8 @@ const navLinks = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
+  { to: "/image", label: "Gallery" }
+
 ];
 
 const Navbar = () => {
