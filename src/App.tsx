@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
 import ImagePage from "./pages/Image";
+import Packages from "./pages/Packages";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/packages" element={<Packages />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/image" element={<ImagePage />} />
               <Route path="*" element={<NotFound />} />

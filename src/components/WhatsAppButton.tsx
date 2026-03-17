@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 // ─── Configuration ────────────────────────────────────────────────────────────
 // Replace this with your actual WhatsApp number (with country code, digits only)
-const WHATSAPP_NUMBER = "919876543210"; // TODO: update with real number
+const WHATSAPP_NUMBER = "917024601594"; // TODO: update with real number
 const WHATSAPP_DEFAULT_MSG = "Hello, I would like to inquire about your travel services."; // Default message when user clicks send without typing
 const TYPING_TEXT = "Hello, How can I assist you?";
 // ─────────────────────────────────────────────────────────────────────────────
