@@ -86,6 +86,7 @@ const routes = [
   { name: "Ujjain to Bhopal", img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg" },
   { name: "Ujjain to Indore", img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg" },
   { name: "Ujjain to Omkareshwar", img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg" },
+  { name: "Ujjain to BaglaMukhi", img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg" },
   { name: "All over India", img: "https://thumbs.dreamstime.com/b/indore-india-skyline-cityscape-illustration-black-background-404500839.jpg" },
 ];
 
@@ -265,36 +266,49 @@ const Index = () => {
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {routes.map((route, i) => (
-              <ScrollReveal key={i} delay={i * 0.08}>
-                <ParallaxItem speed={0.04 + (i % 3) * 0.015}>
-                  <div
-                    className="group relative flex items-center gap-4 rounded-xl border border-border p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-card overflow-hidden bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${route.img})` }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/20"></div>
-                    <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent transition-colors group-hover:bg-gradient-orange">
-                      <Route className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                    </div>
-                    <div className="relative">
-                      <h3 className="font-semibold text-white">{route.name}</h3>
-                      <p className="text-xs text-white/80">Comfortable rides available</p>
-                    </div>
-                    <div className="absolute bottom-1 left-0 w-full border-t border-dashed border-orange-300/40"></div>
-                    <motion.div
-                      className="absolute bottom-0"
-                      initial={{ left: "-30px" }}
-                      animate={{ left: "100%" }}
-                      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Car className="h-5 w-5 text-orange-400 opacity-90" />
-                    </motion.div>
-                  </div>
-                </ParallaxItem>
-              </ScrollReveal>
-            ))}
-          </div>
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  {routes.map((route, i) => {
+    const isLast = i === routes.length - 1;
+
+    return (
+      <div
+        key={i}
+        className={isLast ? "lg:col-start-2" : ""}
+      >
+        <ScrollReveal delay={i * 0.08}>
+          <ParallaxItem speed={0.04 + (i % 3) * 0.015}>
+            <div
+              className="group relative flex items-center gap-4 rounded-xl border border-border p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-card overflow-hidden bg-cover bg-center bg-no-repeat w-full"
+              style={{ backgroundImage: `url(${route.img})` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/20"></div>
+
+              <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent transition-colors group-hover:bg-gradient-orange">
+                <Route className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+
+              <div className="relative">
+                <h3 className="font-semibold text-white">{route.name}</h3>
+                <p className="text-xs text-white/80">Comfortable rides available</p>
+              </div>
+
+              <div className="absolute bottom-1 left-0 w-full border-t border-dashed border-orange-300/40"></div>
+
+              <motion.div
+                className="absolute bottom-0"
+                initial={{ left: "-30px" }}
+                animate={{ left: "100%" }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              >
+                <Car className="h-5 w-5 text-orange-400 opacity-90" />
+              </motion.div>
+            </div>
+          </ParallaxItem>
+        </ScrollReveal>
+      </div>
+    );
+  })}
+</div>
         </div>
       </section>
 

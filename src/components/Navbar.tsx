@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-/* ✅ ADDED: Import real logo from assets folder */
+/* ✅ Logo */
 import Logo from "../assets/LOGO.png";
-import { T } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -14,36 +12,17 @@ const navLinks = [
   { to: "/packages", label: "Packages" },
   { to: "/contact", label: "Contact" },
   { to: "/image", label: "Gallery" }
-
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-  const onScroll = () => setScrolled(window.scrollY > 50);
-  window.addEventListener("scroll", onScroll);
-  return () => window.removeEventListener("scroll", onScroll);
-}, []);
-
-useEffect(() => setOpen(false), [location]);
-
-/* ✅ ADD THIS */
-useEffect(() => {
-  if (open) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
-
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-}, [open]);
-
-  useEffect(() => setOpen(false), [location]);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <nav
@@ -54,22 +33,14 @@ useEffect(() => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
+        
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          
-          {/* ❌ REMOVED OLD TEXT LOGO */}
-          {/*
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-orange">
-            <span className="text-lg font-bold text-primary-foreground">MTT</span>
-          </div>
-          */}
-
-          {/* ✅ ADDED REAL RECTANGULAR LOGO */}
           <img
             src={Logo}
             alt="Mahadev Tours & Travels Logo"
             className="h-16 w-auto object-contain"
           />
-
           <span
             className={`text-xl font-bold font-display ${
               scrolled ? "text-foreground" : "text-primary-foreground"
@@ -79,7 +50,7 @@ useEffect(() => {
           </span>
         </Link>
 
-        {/* Desktop */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -103,72 +74,28 @@ useEffect(() => {
             Book Now
           </Link>
         </div>
-
-        {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden z-50">
-          {open ? (
-            <X className="h-6 w-6 text-foreground" />
-          ) : (
-            <Menu
-              className={`h-6 w-6 ${
-                scrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
-            />
-          )}
-        </button>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-0 z-40 flex flex-col items-center justify-center gap-8 bg-background"
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`text-2xl font-display font-bold ${
-                  location.pathname === link.to
-                    ? "text-primary"
-                    : "text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+      {/* ✅ Mobile Slider Navigation (ONLY navigation now) */}
+      <div className="md:hidden overflow-x-auto no-scrollbar backdrop-blur-sm">
+        <div className="flex gap-3 px-4 py-2 min-w-max">
+          {navLinks.map((link) => (
             <Link
-              to="/contact"
-              className="mt-4 rounded-full bg-gradient-orange px-8 py-3 text-lg font-semibold text-primary-foreground"
+              key={link.to}
+              to={link.to}
+              className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+                location.pathname === link.to
+                  ? "bg-primary text-white"
+                  : scrolled
+                  ? "bg-foreground/10 text-foreground hover:bg-foreground/20"
+                  : "bg-white/20 text-white hover:bg-white/30"
+              }`}
             >
-              Book Now
+              {link.label}
             </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
-{/* ✅ Mobile Slider Navigation */}
-<div className="md:hidden overflow-x-auto no-scrollbar backdrop-blur-sm">
-  <div className="flex gap-3 px-4 py-2 min-w-max">
-    {navLinks.map((link) => (
-      <Link
-        key={link.to}
-        to={link.to}
-        className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
-          location.pathname === link.to
-            ? "bg-primary text-white"
-            : scrolled
-            ? "bg-foreground/10 text-foreground hover:bg-foreground/20"
-            : "bg-white/20 text-white hover:bg-white/30"
-        }`}
-      >
-        {link.label}
-      </Link>
-    ))}
-  </div>
-</div>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };

@@ -1,5 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { Users, Route, Car , Plane, Building2, MapPinned, Repeat, ArrowRight } from "lucide-react";
+import { Users, Route, Car , Plane, Building2, MapPinned, Repeat, ArrowRight , Crown, Flower } from "lucide-react";
 import { motion } from "framer-motion";
 import heroSedan from "@/assets/hero-sedan.png";
 import heroErtiga from "@/assets/hero-ertiga.png";
@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { useRef, useEffect } from "react";
+import { FaEyeSlash } from "react-icons/fa";
 
 /* PARALLAX */
 function useParallax(speed = 0.08) {
@@ -110,6 +111,17 @@ const serviceCards = [
     desc: "Hire Taxi for One Way Drop/Pickup",
     icon: ArrowRight,
   },
+  {
+    title: "Vip Darshan Facilities",
+    desc: "Special Taxi Services for VIP Darshan",
+    icon: Crown,
+  },
+  {
+    title: "Poojan Facilities",
+    desc: "Special Taxi Services for Poojan and Rituals",
+    icon: Flower,
+  },
+
 ];
 
 const Services = () => {
@@ -139,35 +151,37 @@ const Services = () => {
 <section className="py-16 bg-background">
   <div className="container mx-auto px-4">
 
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 items-stretch">
 
       {serviceCards.map((service, i) => {
         const Icon = service.icon;
 
         return (
           <ScrollReveal key={i} delay={i * 0.05}>
-            <div className="group rounded-2xl bg-card border border-border p-6 shadow-sm hover:-translate-y-2 hover:shadow-lg transition">
+            <div className="group rounded-2xl bg-card border border-border p-6 shadow-sm 
+hover:-translate-y-2 hover:shadow-lg transition 
+flex flex-col h-full">
 
               <Icon className="h-8 w-8 text-foreground mb-4" />
 
-              <h3 className="text-lg font-bold text-primary font-display">
-                {service.title}
-              </h3>
+<h3 className="text-lg font-bold text-primary font-display">
+  {service.title}
+</h3>
 
-              <p className="text-sm text-muted-foreground mt-2">
-                {service.desc}
-              </p>
+<p className="text-sm text-muted-foreground mt-2 flex-grow">
+  {service.desc}
+</p>
 
-              <a
-                href={`https://wa.me/917024601594?text=${encodeURIComponent(
-                  `Hello Mahadev Tours & Travels, I want to book ${service.title}. Please share details.`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-5 rounded-full bg-gradient-orange px-4 py-2 text-xs font-semibold text-white hover:scale-105 transition"
-              >
-                BOOK →
-              </a>
+<a
+  href={`https://wa.me/917024601594?text=${encodeURIComponent(
+    `Hello Mahadev Tours & Travels, I want to book ${service.title}. Please share details.`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 mt-5 rounded-full bg-gradient-orange px-4 py-2 text-xs font-semibold text-white hover:scale-105 transition self-start"
+>
+  BOOK →
+</a>
 
             </div>
           </ScrollReveal>
