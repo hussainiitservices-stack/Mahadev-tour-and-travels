@@ -17,6 +17,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import PackagesSection from "@/components/PackagesSection";
+
 // ─── PARALLAX: reusable hook ───────────────────────────────────────────────────
 import { useEffect, useRef, useCallback } from "react";
 
@@ -250,6 +252,23 @@ const Index = () => {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <div className="section-separator" />
+
+      {/* Tour Packages */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-sm font-semibold uppercase tracking-widest text-primary">Tour Packages</span>
+              <h2 className="mt-2 text-3xl font-bold font-display md:text-4xl text-foreground">
+                Our <span className="text-gradient-orange">Packages</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+          <PackagesSection />
         </div>
       </section>
 
